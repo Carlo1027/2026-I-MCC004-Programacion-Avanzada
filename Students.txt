@@ -11,5 +11,5 @@
 10 Quispe Calloapaza, David Saul
 11 Suarez Maciel Susana Isabel
 12 Tellez Heredia Jhon 
-13 Vilca Aguilar Luis Angel
+13 Vilca Aguilar Luis Angel <luisangelvilca2@gmail.com>,
 14 Vinatea Chávez Camilo Jorge
