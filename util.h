@@ -37,7 +37,7 @@ double Promedio(double x0, double y0);
     int cuadrado(int x13);
     
 // 14 Tellez Heredia Jhon <phyjhon@gmail.com>,
-float porcentaje(int a14, int b14);
+F14 porcentaje(T14 a14, T14 b14);
 // 15 Vilca Aguilar Luis Angel <luisangelvilca2@gmail.com>,
 int fact(int n);
 
