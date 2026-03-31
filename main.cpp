@@ -9,8 +9,8 @@ using namespace std;
 int main() {
 
     // 0. Ernesto Cuadros <ecuadros@spc.org.pe>
-    int x0 = 1, y0 = 2;
-    int a0 = suma(x0, y0);
+    T1 x0 = 1, y0 = 2;
+    T1 a0 = suma(x0, y0);
     cout << "Ernesto Cuadros-Vargas: " << a0 << endl;
 
     // 1 Alvarez Cadillo, Michell Adrian <<michell.aac.1106@gmail.com>,
