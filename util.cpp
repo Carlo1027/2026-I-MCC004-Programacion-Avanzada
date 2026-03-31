@@ -22,7 +22,10 @@ int suma(int x, int y) {
 // 8 Gallo Lugo Carlos enrique <cgallolugo@gmail.com>
 
 // 9 Lopez Flores Royer Amed <roamlofl9@gmail.com>
-
+// abs
+double valor_absoluto(double x) {
+    return (x < 0) ? -x : x; 
+}
 // 10 Miranda Zarate Jorge Luis <mirandazaratejorge@gmail.com>,
 
 // 11 Oscar Toledo Guerrero <tgoscar@gmail.com>

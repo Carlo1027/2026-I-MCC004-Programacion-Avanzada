@@ -34,7 +34,15 @@ int main() {
     // 8 Gallo Lugo Carlos enrique <cgallolugo@gmail.com>
 
     // 9 Lopez Flores Royer Amed <roamlofl9@gmail.com>
-
+    // Valor absoluto
+    cout << endl;
+    double x91 = -3.14;
+    double a91 = valor_absoluto(x91);
+    cout << "Lopez Flores Royer Amed: " << a91 << endl;
+    double x92 = 2.71;
+    double a92 = valor_absoluto(x92);
+    cout << "Lopez Flores Royer Amed: " << a92 << endl;
+    cout<<endl;
     // 10 Miranda Zarate Jorge Luis <mirandazaratejorge@gmail.com>,
 
     // 11 Oscar Toledo Guerrero <tgoscar@gmail.com>
