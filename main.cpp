@@ -48,7 +48,9 @@ int main() {
     // 15 Vilca Aguilar Luis Angel <luisangelvilca2@gmail.com>,
 
     // 16 Vinatea Chávez Camilo Jorge <camo2391@gmail.com>
-
+    float x16 = 3.14, y16 = 2.71;
+    float z16 = mult(x16, y16);
+    cout << "Camilo Vinatea: " << z16 << endl;
     // 20 Segura Nuñez Alex Ernesto <alex.segura.nunez@gmail.com>
 
     // 21 Selis Vasquez Luis Antonio <luisanonioselisvasquez@gmail.com>

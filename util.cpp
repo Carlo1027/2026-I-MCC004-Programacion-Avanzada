@@ -36,6 +36,9 @@ int suma(int x, int y) {
 // 15 Vilca Aguilar Luis Angel <luisangelvilca2@gmail.com>,
 
 // 16 Vinatea Chávez Camilo Jorge <camo2391@gmail.com>
+float mult(float x, float y) {
+    return x*y;
+}
 
 // 20 Segura Nuñez Alex Ernesto <alex.segura.nunez@gmail.com>
 
