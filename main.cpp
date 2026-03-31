@@ -45,6 +45,13 @@ int main() {
     // 20 Segura Nuñez Alex Ernesto <alex.segura.nunez@gmail.com>
 
     // 21 Selis Vasquez Luis Antonio <luisanonioselisvasquez@gmail.com>
-
+    int factorial() {
+        int n0 = 6;
+        int resultado = 1;
+        for (int i = 1; i <= n0; i++) {
+            resultado = resultado * i;
+        }
+        return resultado;
+        }
     return 0;
 }
