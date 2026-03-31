@@ -4,11 +4,13 @@
 int suma(int x, int y);
 
 // 1 Alvarez Cadillo, Michell Adrian <<michell.aac.1106@gmail.com>,
+int resta(int x, int y);
 
 // 2 Bernaola Gayoso César Raúl <bernaolacesar@gmail.com>,
+int multiplicacion(int x, int y);
 
 // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
-
+float dividir(int x,int y);
 // 4 Castro Galindo Carlo André <carlocastrogalindo@gmail.com>,
 int potencia(int base, int exponente);
 

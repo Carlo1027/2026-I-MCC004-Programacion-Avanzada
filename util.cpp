@@ -6,11 +6,20 @@ int suma(int x, int y) {
 }
 
 // 1 Alvarez Cadillo, Michell Adrian <<michell.aac.1106@gmail.com>,
+int resta(int x, int y) {
+    return x - y;
+}
 
 // 2 Bernaola Gayoso César Raúl <bernaolacesar@gmail.com>,
+int multiplicacion(int x, int y) {
+    return x * y;
+}
 
 // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
-
+float dividir(int x,int y)
+{
+    return (float)x/(float)y;
+}
 // 4 Castro Galindo Carlo André <carlocastrogalindo@gmail.com>,
 int potencia(int base, int exponente) {
     int resultado = 1;
@@ -25,6 +34,15 @@ int potencia(int base, int exponente) {
 // 6 Díaz Vega Greta Solange <gretadiaz01@gmail.com>
 
 // 7 DÍAZ VEGA OLENKA HELENE <olenka.diaz.v@uni.pe>
+int exponencial(int x, int y) {
+    int resultado = 1;
+
+    for (int i = 0; i < y; i++) {
+        resultado *= x;
+    }
+
+    return resultado;
+}
 
 // 8 Gallo Lugo Carlos enrique <cgallolugo@gmail.com>
 
