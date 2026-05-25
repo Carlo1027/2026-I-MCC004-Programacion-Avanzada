@@ -7,11 +7,12 @@
 #include "polimorfismo.h"
 #include "Pointers.h"
 #include "BitSigno.h"
+#include "carlo.h"
 
 using namespace std;
 
 // Ernesto Cuadros
-// g++ -std=c++2b main.cpp util.cpp -o main
+// g++ -std=c++2b main.cpp util.cpp carlo.cpp -o main
 int main() {
     // DemoFunctions();
     // DemoComplex();
@@ -21,7 +22,9 @@ int main() {
     // DemoPointersVector1();
     // DemoPointersVector2();
     // DemoPointersVector3();
-    DemoPointersVector4();
-    DemoPointersVector5();
+    // DemoPointersVector4();
+    // DemoPointersVector5();
+    DemoMatrixCarlo1();
+    DemoMatrixCarlo2();
     return 0;
 }
