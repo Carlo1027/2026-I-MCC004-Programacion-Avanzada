@@ -12,7 +12,7 @@
 using namespace std;
 
 // Ernesto Cuadros
-// g++ -std=c++2b main.cpp util.cpp carlo.cpp -o main
+// g++ -std=c++2b main.cpp util.cpp -o main
 int main() {
     // DemoFunctions();
     // DemoComplex();
