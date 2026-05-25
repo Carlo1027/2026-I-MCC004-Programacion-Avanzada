@@ -58,7 +58,6 @@ class MatrixCarlo {
             return os;
         }
 
-        // Libera memoria: primero cada fila, luego el arreglo de punteros
         void Destroy() {
             if (m_pMat != nullptr) {
                 for (size_t i = 0; i < m_rows; ++i)
@@ -69,7 +68,7 @@ class MatrixCarlo {
         }
 };
 
-// Operadores >> y << para usar con cin/cout/fstream directamente
+// Operadores >> y <<
 template <typename T>
 istream &operator>>(istream &is, MatrixCarlo<T> &mat) {
     return mat.Read(is);
