@@ -3,5 +3,6 @@
 
 void DemoMatrixCarlo1();
 void DemoMatrixCarlo2();
+void DemoMatrixCarlo3();
 
 #endif // __CARLO_H__
