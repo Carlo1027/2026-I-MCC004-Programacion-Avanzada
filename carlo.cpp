@@ -75,7 +75,6 @@ void DemoMatrixCarlo3() {
     cout << "Ingrese m2 (filas cols elementos):\n";
     MatrixCarlo<TI> m2;
     cin >> m2;
-
     
     cout << "Ingrese m3 (filas cols elementos):\n";
     MatrixCarlo<TI> m3;

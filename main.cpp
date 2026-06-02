@@ -26,7 +26,6 @@ int main() {
     // DemoPointersVector5();
     // DemoMatrixCarlo1();
     // DemoMatrixCarlo2();
-    
     DemoMatrixCarlo3();
     return 0;
 }
