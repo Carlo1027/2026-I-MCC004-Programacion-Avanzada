@@ -29,7 +29,7 @@ class MatrixCarlo {
     public:
         MatrixCarlo() { }
 
-        // Copy constructor — copia profunda elemento a elemento
+        // Copy constructor
         MatrixCarlo(const MatrixCarlo &other) {
             m_rows = other.m_rows;
             m_cols = other.m_cols;
@@ -39,7 +39,7 @@ class MatrixCarlo {
                     m_pMat[i][j] = other.m_pMat[i][j];
         }
 
-        // Move constructor — roba la memoria del objeto fuente
+        // Move constructor
         MatrixCarlo(MatrixCarlo &&other) {
             m_pMat = std::exchange(other.m_pMat, nullptr);
             m_rows = std::exchange(other.m_rows, 0);
@@ -48,7 +48,6 @@ class MatrixCarlo {
 
         ~MatrixCarlo() { Destroy(); }
 
-        // Copy assignment — libera memoria propia y hace copia profunda
         MatrixCarlo &operator=(const MatrixCarlo &other) {
             if (this == &other) return *this;
             Destroy();
@@ -61,7 +60,6 @@ class MatrixCarlo {
             return *this;
         }
 
-        // Move assignment — libera memoria propia y roba la del fuente
         MatrixCarlo &operator=(MatrixCarlo &&other) {
             if (this == &other) return *this;
             Destroy();
@@ -71,7 +69,6 @@ class MatrixCarlo {
             return *this;
         }
 
-        // Lee: primero filas y cols, luego los elementos fila por fila
         istream &Read(istream &is) {
             is >> m_rows >> m_cols;
             Create();
@@ -81,7 +78,6 @@ class MatrixCarlo {
             return is;
         }
 
-        // Aplica func a todos los elementos con argumentos extra opcionales
         template <typename Func, typename... Args>
         void ApplyFunctionToAll(Func func, Args&& ...args) {
             for (size_t i = 0; i < m_rows; ++i)
@@ -89,7 +85,6 @@ class MatrixCarlo {
                     func(m_pMat[i][j], std::forward<Args>(args)...);
         }
 
-        // Imprime: "filas cols\n" seguido de cada fila en una línea
         ostream &Print(ostream &os) {
             os << m_rows << " " << m_cols << "\n";
             for (size_t i = 0; i < m_rows; ++i) {
@@ -100,7 +95,6 @@ class MatrixCarlo {
             return os;
         }
 
-        // Suma elemento a elemento (requiere mismas dimensiones)
         MatrixCarlo operator+(const MatrixCarlo &other) const {
             assert(m_rows == other.m_rows && m_cols == other.m_cols);
             MatrixCarlo result;
@@ -113,7 +107,6 @@ class MatrixCarlo {
             return result;
         }
 
-        // Resta elemento a elemento (requiere mismas dimensiones)
         MatrixCarlo operator-(const MatrixCarlo &other) const {
             assert(m_rows == other.m_rows && m_cols == other.m_cols);
             MatrixCarlo result;
@@ -126,7 +119,6 @@ class MatrixCarlo {
             return result;
         }
 
-        // Multiplicación matricial (requiere this.cols == other.rows)
         MatrixCarlo operator*(const MatrixCarlo &other) const {
             assert(m_cols == other.m_rows);
             MatrixCarlo result;
@@ -164,7 +156,7 @@ class MatrixCarlo {
         }
 };
 
-// Multiplicación por escalar: valor * mat (permite escribir 5 * mat)
+// Multiplicación por escalar: valor * mat
 template <typename T>
 MatrixCarlo<T> operator*(T value, const MatrixCarlo<T> &mat) {
     return mat * value;
