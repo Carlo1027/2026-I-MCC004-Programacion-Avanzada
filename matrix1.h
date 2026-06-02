@@ -1,6 +1,5 @@
 #ifndef __MATRIX_H__
 #define __MATRIX_H__
-#include <__nullptr>
 #include <functional>
 #include <iostream>
 
@@ -16,6 +15,8 @@ class Matrix1 {
         size_t   m_rows = 0, m_cols = 0;
     public:
         Matrix1()      { }
+        Matrix1(Matrix1 &other) = delete; // No copy constructor
+        Matrix1(Matrix1 &&other); 
         ~Matrix1()     { Destroy(); }
         void     Create();
         istream &Read(istream &is);
@@ -33,6 +34,12 @@ void Matrix1<T>::Create()
         m_pMat[i] = new T[m_cols];
 }
 
-
+// Move constructor
+template <typename T>
+Matrix1<T>::Matrix1(Matrix1 &&other) {
+    m_pMat = exchange(other.m_pMat, nullptr);
+    m_rows = exchange(other.m_rows, 0);
+    m_cols = exchange(other.m_cols, 0);
+}
 
 #endif // __MATRIX_H__
