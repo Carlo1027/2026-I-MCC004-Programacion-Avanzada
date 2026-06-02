@@ -181,4 +181,5 @@ ostream &operator<<(ostream &os, MatrixCarlo<T> &mat) {
     return mat.Print(os);
 }
 
+
 #endif // __CARLO_MATRIX_H__
