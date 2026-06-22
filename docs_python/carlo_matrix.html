@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>carlo_matrix API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>carlo_matrix</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="carlo_matrix.MatrixCarlo"><code class="flex name class">
+<span>class <span class="ident">MatrixCarlo</span></span>
+<span>(</span><span>other=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MatrixCarlo:
+    &#34;&#34;&#34;
+    Clase para matriz dinámica 2D, equivalente Python de MatrixCarlo&lt;T&gt; en C++.
+
+    En C++ se usa un doble puntero T** con new/delete manual.
+    En Python se usa una lista de listas y el GC maneja la memoria.
+
+    Attributes:
+        _rows (int): Número de filas.
+        _cols (int): Número de columnas.
+        _mat (list[list]): Datos de la matriz como lista de listas.
+
+    Example:
+        &gt;&gt;&gt; m = MatrixCarlo.from_string(&#34;2x2: 1 2 / 3 4&#34;)
+        &gt;&gt;&gt; print(m)
+        2 2
+        1 2
+        3 4
+    &#34;&#34;&#34;
+
+    # ── Constructor / Copy constructor ────────────────────────────────────
+    def __init__(self, other=None):
+        &#34;&#34;&#34;
+        Constructor default o copy constructor.
+
+        Args:
+            other (MatrixCarlo, optional): Si se pasa, hace copia profunda.
+                Equivale al copy constructor de C++.
+        &#34;&#34;&#34;
+        if other is None:
+            self._mat  = None
+            self._rows = 0
+            self._cols = 0
+        elif isinstance(other, MatrixCarlo):
+            # Copy constructor — copia profunda fila por fila
+            self._rows = other._rows
+            self._cols = other._cols
+            self._mat  = [row[:] for row in other._mat]
+
+    # ── Memoria ────────────────────────────────────────────────────────────
+    def _create(self):
+        &#34;&#34;&#34;
+        Reserva la matriz interna de ceros.
+        Equivale a Create() en C++: new T*[rows] + new T[cols] por fila.
+
+        Raises:
+            AssertionError: Si rows o cols son 0.
+        &#34;&#34;&#34;
+        assert self._rows &gt; 0 and self._cols &gt; 0
+        self._mat = [[0] * self._cols for _ in range(self._rows)]
+
+    def destroy(self):
+        &#34;&#34;&#34;
+        Libera la memoria y resetea el estado.
+        Equivale a Destroy() en C++: delete[] por fila + delete[] del arreglo.
+        En Python solo se eliminan las referencias; el GC hace el resto.
+        &#34;&#34;&#34;
+        self._mat  = None
+        self._rows = 0
+        self._cols = 0
+
+    # ── I/O ────────────────────────────────────────────────────────────────
+    def read(self, stream=None):
+        &#34;&#34;&#34;
+        Lee filas, columnas y elementos desde un stream, igual que Read(istream&amp;) en C++.
+
+        El stream puede ser stdin o un archivo abierto. Lee tokens ignorando
+        saltos de línea, igual que el operador &gt;&gt; de C++.
+
+        Args:
+            stream (IO, optional): Stream de entrada. Por defecto sys.stdin.
+
+        Returns:
+            MatrixCarlo: self, para encadenamiento.
+        &#34;&#34;&#34;
+        if stream is None:
+            stream = sys.stdin
+        tokens = _tokenizer(stream)
+        self._rows = int(next(tokens))
+        self._cols = int(next(tokens))
+        self._create()
+        for i in range(self._rows):
+            for j in range(self._cols):
+                self._mat[i][j] = int(next(tokens))
+        return self
+
+    def print(self, stream=None):
+        &#34;&#34;&#34;
+        Imprime la matriz en un stream, igual que Print(ostream&amp;) en C++.
+
+        Formato de salida: primera línea &#39;rows cols&#39;, luego una fila por línea.
+
+        Args:
+            stream (IO, optional): Stream de salida. Por defecto sys.stdout.
+
+        Returns:
+            MatrixCarlo: self, para encadenamiento.
+        &#34;&#34;&#34;
+        if stream is None:
+            stream = sys.stdout
+        stream.write(f&#34;{self._rows} {self._cols}\n&#34;)
+        for i in range(self._rows):
+            stream.write(&#34; &#34;.join(str(self._mat[i][j]) for j in range(self._cols)) + &#34;\n&#34;)
+        return self
+
+    def __str__(self):
+        &#34;&#34;&#34;
+        Representación en string, equivalente a operator&lt;&lt; en C++.
+
+        Returns:
+            str: Matriz formateada como &#39;rows cols\\nfila0\\nfila1\\n...&#39;.
+        &#34;&#34;&#34;
+        lines = [f&#34;{self._rows} {self._cols}&#34;]
+        for row in self._mat:
+            lines.append(&#34; &#34;.join(str(x) for x in row))
+        return &#34;\n&#34;.join(lines)
+
+    # ── ApplyFunctionToAll ─────────────────────────────────────────────────
+    def apply_function_to_all(self, func, *args, threaded=False):
+        &#34;&#34;&#34;
+        Aplica func a cada elemento [i][j] de la matriz.
+
+        Equivale a ApplyFunctionToAll(Func, Args...) en C++ con variadic templates.
+        Con threaded=True, cada fila se procesa en un hilo separado (como en
+        la implementación con std::thread del profesor).
+
+        Args:
+            func (callable): Función que recibe el elemento (y args extra) y
+                retorna el nuevo valor. Ej: lambda x: x + 1.
+            *args: Argumentos extra opcionales que se pasan a func.
+            threaded (bool): Si True, usa un Thread por fila. Default False.
+
+        Example:
+            &gt;&gt;&gt; mat.apply_function_to_all(lambda x: x * x)
+            &gt;&gt;&gt; mat.apply_function_to_all(lambda x, v: x + v, 5, threaded=True)
+        &#34;&#34;&#34;
+        if not threaded:
+            for i in range(self._rows):
+                for j in range(self._cols):
+                    self._mat[i][j] = func(self._mat[i][j], *args)
+        else:
+            def process_row(i):
+                for j in range(self._cols):
+                    self._mat[i][j] = func(self._mat[i][j], *args)
+
+            threads = [threading.Thread(target=process_row, args=(i,))
+                       for i in range(self._rows)]
+            for t in threads: t.start()
+            for t in threads: t.join()
+
+    # ── Parsear desde string con regex ────────────────────────────────────
+    @classmethod
+    def from_string(cls, text):
+        &#34;&#34;&#34;
+        Crea una MatrixCarlo desde un string con formato &#39;NxM: n1 n2 ... / n3 n4 ...&#39;.
+
+        Usa expresiones regulares para extraer las dimensiones y los elementos,
+        sin depender del formato exacto de separadores.
+
+        Args:
+            text (str): String de entrada. Ej: &#39;2x3: 1 2 3 / 4 5 6&#39;.
+
+        Returns:
+            MatrixCarlo: Nueva instancia con los datos parseados.
+
+        Raises:
+            AssertionError: Si el formato no contiene &#39;NxM&#39; o el número de
+                elementos no coincide con rows * cols.
+
+        Example:
+            &gt;&gt;&gt; m = MatrixCarlo.from_string(&#34;3x3: 1 2 3 / 4 5 6 / 7 8 9&#34;)
+        &#34;&#34;&#34;
+        header = re.search(r&#39;(\d+)\s*[xX]\s*(\d+)&#39;, text)
+        assert header, &#34;Formato invalido: se espera NxM al inicio&#34;
+        rows, cols = int(header.group(1)), int(header.group(2))
+
+        numbers = re.findall(r&#39;-?\d+&#39;, text[header.end():])
+        assert len(numbers) == rows * cols, \
+            f&#34;Se esperaban {rows * cols} elementos, se encontraron {len(numbers)}&#34;
+
+        mat = cls()
+        mat._rows = rows
+        mat._cols = cols
+        mat._create()
+        idx = 0
+        for i in range(rows):
+            for j in range(cols):
+                mat[i][j] = int(numbers[idx]); idx += 1
+        return mat
+
+    # ── Operadores aritmeticos ─────────────────────────────────────────────
+    def __add__(self, other):
+        &#34;&#34;&#34;
+        Suma elemento a elemento, equivale a operator+ en C++.
+
+        Args:
+            other (MatrixCarlo): Matriz con las mismas dimensiones.
+
+        Returns:
+            MatrixCarlo: Nueva matriz resultado.
+
+        Raises:
+            AssertionError: Si las dimensiones no coinciden.
+        &#34;&#34;&#34;
+        assert self._rows == other._rows and self._cols == other._cols
+        result = MatrixCarlo()
+        result._rows = self._rows
+        result._cols = self._cols
+        result._create()
+        for i in range(self._rows):
+            for j in range(self._cols):
+                result._mat[i][j] = self._mat[i][j] + other._mat[i][j]
+        return result
+
+    def __sub__(self, other):
+        &#34;&#34;&#34;
+        Resta elemento a elemento, equivale a operator- en C++.
+
+        Args:
+            other (MatrixCarlo): Matriz con las mismas dimensiones.
+
+        Returns:
+            MatrixCarlo: Nueva matriz resultado.
+
+        Raises:
+            AssertionError: Si las dimensiones no coinciden.
+        &#34;&#34;&#34;
+        assert self._rows == other._rows and self._cols == other._cols
+        result = MatrixCarlo()
+        result._rows = self._rows
+        result._cols = self._cols
+        result._create()
+        for i in range(self._rows):
+            for j in range(self._cols):
+                result._mat[i][j] = self._mat[i][j] - other._mat[i][j]
+        return result
+
+    def __mul__(self, other):
+        &#34;&#34;&#34;
+        Multiplicación matricial o por escalar, equivale a operator* en C++.
+
+        Dos casos:
+        - MatrixCarlo * MatrixCarlo: multiplicación matricial clásica (tres loops).
+          Requiere self._cols == other._rows.
+        - MatrixCarlo * escalar: multiplica cada elemento por el valor.
+
+        Args:
+            other (MatrixCarlo | int | float): Otra matriz o escalar.
+
+        Returns:
+            MatrixCarlo: Nueva matriz resultado.
+
+        Raises:
+            AssertionError: Si es multiplicación matricial y las dimensiones
+                no son compatibles.
+        &#34;&#34;&#34;
+        if isinstance(other, MatrixCarlo):
+            assert self._cols == other._rows
+            result = MatrixCarlo()
+            result._rows = self._rows
+            result._cols = other._cols
+            result._create()
+            for i in range(self._rows):
+                for j in range(other._cols):
+                    result._mat[i][j] = sum(
+                        self._mat[i][k] * other._mat[k][j]
+                        for k in range(self._cols)
+                    )
+            return result
+        else:
+            result = MatrixCarlo()
+            result._rows = self._rows
+            result._cols = self._cols
+            result._create()
+            for i in range(self._rows):
+                for j in range(self._cols):
+                    result._mat[i][j] = self._mat[i][j] * other
+            return result
+
+    def __rmul__(self, scalar):
+        &#34;&#34;&#34;
+        Multiplicación con escalar a la izquierda: escalar * mat.
+
+        Equivale a la función libre operator*(T value, const MatrixCarlo&amp;) en C++.
+        Permite escribir 5 * mat en vez de solo mat * 5.
+
+        Args:
+            scalar (int | float): Escalar multiplicador.
+
+        Returns:
+            MatrixCarlo: Nueva matriz resultado.
+        &#34;&#34;&#34;
+        return self.__mul__(scalar)
+
+    # ── Indexado: m[i][j] = valor ──────────────────────────────────────────
+    def __getitem__(self, i):
+        &#34;&#34;&#34;
+        Acceso por índice de fila: m[i] retorna la fila i como lista.
+
+        Permite la sintaxis m[i][j] y m[i][j] = valor, igual que
+        m_pMat[i][j] en C++.
+
+        Args:
+            i (int): Índice de fila.
+
+        Returns:
+            list: La fila i (referencia directa, no copia).
+        &#34;&#34;&#34;
+        return self._mat[i]</code></pre>
+</details>
+<div class="desc"><p>Clase para matriz dinámica 2D, equivalente Python de MatrixCarlo<T> en C++.</p>
+<p>En C++ se usa un doble puntero T** con new/delete manual.
+En Python se usa una lista de listas y el GC maneja la memoria.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>_rows</code></strong> :&ensp;<code>int</code></dt>
+<dd>Número de filas.</dd>
+<dt><strong><code>_cols</code></strong> :&ensp;<code>int</code></dt>
+<dd>Número de columnas.</dd>
+<dt><strong><code>_mat</code></strong> :&ensp;<code>list[list]</code></dt>
+<dd>Datos de la matriz como lista de listas.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; m = MatrixCarlo.from_string(&quot;2x2: 1 2 / 3 4&quot;)
+&gt;&gt;&gt; print(m)
+2 2
+1 2
+3 4
+</code></pre>
+<p>Constructor default o copy constructor.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>other</code></strong> :&ensp;<code><a title="carlo_matrix.MatrixCarlo" href="#carlo_matrix.MatrixCarlo">MatrixCarlo</a></code>, optional</dt>
+<dd>Si se pasa, hace copia profunda.
+Equivale al copy constructor de C++.</dd>
+</dl></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="carlo_matrix.MatrixCarlo.from_string"><code class="name flex">
+<span>def <span class="ident">from_string</span></span>(<span>text)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crea una MatrixCarlo desde un string con formato 'NxM: n1 n2 &hellip; / n3 n4 &hellip;'.</p>
+<p>Usa expresiones regulares para extraer las dimensiones y los elementos,
+sin depender del formato exacto de separadores.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>text</code></strong> :&ensp;<code>str</code></dt>
+<dd>String de entrada. Ej: '2x3: 1 2 3 / 4 5 6'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="carlo_matrix.MatrixCarlo" href="#carlo_matrix.MatrixCarlo">MatrixCarlo</a></code></dt>
+<dd>Nueva instancia con los datos parseados.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>AssertionError</code></dt>
+<dd>Si el formato no contiene 'NxM' o el número de
+elementos no coincide con rows * cols.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; m = MatrixCarlo.from_string(&quot;3x3: 1 2 3 / 4 5 6 / 7 8 9&quot;)
+</code></pre></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="carlo_matrix.MatrixCarlo.apply_function_to_all"><code class="name flex">
+<span>def <span class="ident">apply_function_to_all</span></span>(<span>self, func, *args, threaded=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def apply_function_to_all(self, func, *args, threaded=False):
+    &#34;&#34;&#34;
+    Aplica func a cada elemento [i][j] de la matriz.
+
+    Equivale a ApplyFunctionToAll(Func, Args...) en C++ con variadic templates.
+    Con threaded=True, cada fila se procesa en un hilo separado (como en
+    la implementación con std::thread del profesor).
+
+    Args:
+        func (callable): Función que recibe el elemento (y args extra) y
+            retorna el nuevo valor. Ej: lambda x: x + 1.
+        *args: Argumentos extra opcionales que se pasan a func.
+        threaded (bool): Si True, usa un Thread por fila. Default False.
+
+    Example:
+        &gt;&gt;&gt; mat.apply_function_to_all(lambda x: x * x)
+        &gt;&gt;&gt; mat.apply_function_to_all(lambda x, v: x + v, 5, threaded=True)
+    &#34;&#34;&#34;
+    if not threaded:
+        for i in range(self._rows):
+            for j in range(self._cols):
+                self._mat[i][j] = func(self._mat[i][j], *args)
+    else:
+        def process_row(i):
+            for j in range(self._cols):
+                self._mat[i][j] = func(self._mat[i][j], *args)
+
+        threads = [threading.Thread(target=process_row, args=(i,))
+                   for i in range(self._rows)]
+        for t in threads: t.start()
+        for t in threads: t.join()</code></pre>
+</details>
+<div class="desc"><p>Aplica func a cada elemento [i][j] de la matriz.</p>
+<p>Equivale a ApplyFunctionToAll(Func, Args&hellip;) en C++ con variadic templates.
+Con threaded=True, cada fila se procesa en un hilo separado (como en
+la implementación con std::thread del profesor).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>func</code></strong> :&ensp;<code>callable</code></dt>
+<dd>Función que recibe el elemento (y args extra) y
+retorna el nuevo valor. Ej: lambda x: x + 1.</dd>
+<dt><strong><code>*args</code></strong></dt>
+<dd>Argumentos extra opcionales que se pasan a func.</dd>
+<dt><strong><code>threaded</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Si True, usa un Thread por fila. Default False.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; mat.apply_function_to_all(lambda x: x * x)
+&gt;&gt;&gt; mat.apply_function_to_all(lambda x, v: x + v, 5, threaded=True)
+</code></pre></div>
+</dd>
+<dt id="carlo_matrix.MatrixCarlo.destroy"><code class="name flex">
+<span>def <span class="ident">destroy</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def destroy(self):
+    &#34;&#34;&#34;
+    Libera la memoria y resetea el estado.
+    Equivale a Destroy() en C++: delete[] por fila + delete[] del arreglo.
+    En Python solo se eliminan las referencias; el GC hace el resto.
+    &#34;&#34;&#34;
+    self._mat  = None
+    self._rows = 0
+    self._cols = 0</code></pre>
+</details>
+<div class="desc"><p>Libera la memoria y resetea el estado.
+Equivale a Destroy() en C++: delete[] por fila + delete[] del arreglo.
+En Python solo se eliminan las referencias; el GC hace el resto.</p></div>
+</dd>
+<dt id="carlo_matrix.MatrixCarlo.print"><code class="name flex">
+<span>def <span class="ident">print</span></span>(<span>self, stream=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print(self, stream=None):
+    &#34;&#34;&#34;
+    Imprime la matriz en un stream, igual que Print(ostream&amp;) en C++.
+
+    Formato de salida: primera línea &#39;rows cols&#39;, luego una fila por línea.
+
+    Args:
+        stream (IO, optional): Stream de salida. Por defecto sys.stdout.
+
+    Returns:
+        MatrixCarlo: self, para encadenamiento.
+    &#34;&#34;&#34;
+    if stream is None:
+        stream = sys.stdout
+    stream.write(f&#34;{self._rows} {self._cols}\n&#34;)
+    for i in range(self._rows):
+        stream.write(&#34; &#34;.join(str(self._mat[i][j]) for j in range(self._cols)) + &#34;\n&#34;)
+    return self</code></pre>
+</details>
+<div class="desc"><p>Imprime la matriz en un stream, igual que Print(ostream&amp;) en C++.</p>
+<p>Formato de salida: primera línea 'rows cols', luego una fila por línea.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>stream</code></strong> :&ensp;<code>IO</code>, optional</dt>
+<dd>Stream de salida. Por defecto sys.stdout.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="carlo_matrix.MatrixCarlo" href="#carlo_matrix.MatrixCarlo">MatrixCarlo</a></code></dt>
+<dd>self, para encadenamiento.</dd>
+</dl></div>
+</dd>
+<dt id="carlo_matrix.MatrixCarlo.read"><code class="name flex">
+<span>def <span class="ident">read</span></span>(<span>self, stream=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read(self, stream=None):
+    &#34;&#34;&#34;
+    Lee filas, columnas y elementos desde un stream, igual que Read(istream&amp;) en C++.
+
+    El stream puede ser stdin o un archivo abierto. Lee tokens ignorando
+    saltos de línea, igual que el operador &gt;&gt; de C++.
+
+    Args:
+        stream (IO, optional): Stream de entrada. Por defecto sys.stdin.
+
+    Returns:
+        MatrixCarlo: self, para encadenamiento.
+    &#34;&#34;&#34;
+    if stream is None:
+        stream = sys.stdin
+    tokens = _tokenizer(stream)
+    self._rows = int(next(tokens))
+    self._cols = int(next(tokens))
+    self._create()
+    for i in range(self._rows):
+        for j in range(self._cols):
+            self._mat[i][j] = int(next(tokens))
+    return self</code></pre>
+</details>
+<div class="desc"><p>Lee filas, columnas y elementos desde un stream, igual que Read(istream&amp;) en C++.</p>
+<p>El stream puede ser stdin o un archivo abierto. Lee tokens ignorando
+saltos de línea, igual que el operador &gt;&gt; de C++.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>stream</code></strong> :&ensp;<code>IO</code>, optional</dt>
+<dd>Stream de entrada. Por defecto sys.stdin.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="carlo_matrix.MatrixCarlo" href="#carlo_matrix.MatrixCarlo">MatrixCarlo</a></code></dt>
+<dd>self, para encadenamiento.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="carlo_matrix.MatrixCarlo" href="#carlo_matrix.MatrixCarlo">MatrixCarlo</a></code></h4>
+<ul class="">
+<li><code><a title="carlo_matrix.MatrixCarlo.apply_function_to_all" href="#carlo_matrix.MatrixCarlo.apply_function_to_all">apply_function_to_all</a></code></li>
+<li><code><a title="carlo_matrix.MatrixCarlo.destroy" href="#carlo_matrix.MatrixCarlo.destroy">destroy</a></code></li>
+<li><code><a title="carlo_matrix.MatrixCarlo.from_string" href="#carlo_matrix.MatrixCarlo.from_string">from_string</a></code></li>
+<li><code><a title="carlo_matrix.MatrixCarlo.print" href="#carlo_matrix.MatrixCarlo.print">print</a></code></li>
+<li><code><a title="carlo_matrix.MatrixCarlo.read" href="#carlo_matrix.MatrixCarlo.read">read</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
