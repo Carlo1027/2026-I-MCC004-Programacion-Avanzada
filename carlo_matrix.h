@@ -146,6 +146,15 @@ class MatrixCarlo {
             return result;
         }
 
+        // Acceso por fila: mat[i] retorna puntero a la fila i
+        // Permite mat[i][j] y mat[i][j] = valor, igual que m_pMat[i][j] en C++
+        T       *operator[](size_t i)       { return m_pMat[i]; }
+        const T *operator[](size_t i) const { return m_pMat[i]; }
+
+        // Getters de dimensiones (necesarios para los bindings pybind11)
+        size_t rows() const { return m_rows; }
+        size_t cols() const { return m_cols; }
+
         void Destroy() {
             if (m_pMat != nullptr) {
                 for (size_t i = 0; i < m_rows; ++i)
