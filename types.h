@@ -27,6 +27,7 @@ using Area     = double;
 
 using TI = int;
 using TP = int;
+using TC = char;
 
 #endif // __TYPES_H__
 

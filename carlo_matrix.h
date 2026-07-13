@@ -146,6 +146,14 @@ class MatrixCarlo {
             return result;
         }
 
+        // Inicializa la matriz con dimensiones dadas y ceros
+        // Necesario para construir la matriz resultado antes de llenarla con hilos
+        void Init(size_t rows, size_t cols) {
+            Destroy();
+            m_rows = rows; m_cols = cols;
+            Create();
+        }
+
         // Acceso por fila: mat[i] retorna puntero a la fila i
         // Permite mat[i][j] y mat[i][j] = valor, igual que m_pMat[i][j] en C++
         T       *operator[](size_t i)       { return m_pMat[i]; }
