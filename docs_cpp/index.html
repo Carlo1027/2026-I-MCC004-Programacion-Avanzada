@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Documentacion — MatrixCarlo</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background:#fafafa; color:#222; }
+  h1 { color:#1a1a2e; border-bottom:3px solid #4a90d9; padding-bottom:8px; }
+  h2 { color:#4a90d9; margin-top:40px; }
+  .entry { background:#fff; border:1px solid #ddd; border-radius:6px; padding:16px; margin:16px 0; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  code.decl { display:block; background:#f0f4f8; padding:8px 12px; border-radius:4px; font-size:0.9em; margin-bottom:10px; word-break:break-all; }
+  p.brief { margin:6px 0; }
+  table { border-collapse:collapse; width:100%; margin:8px 0; font-size:0.9em; }
+  th { background:#4a90d9; color:#fff; padding:6px 10px; text-align:left; }
+  td { padding:5px 10px; border-bottom:1px solid #eee; }
+  .filename { background:#e8f0fe; border-left:4px solid #4a90d9; padding:6px 12px; font-size:0.85em; color:#555; margin-bottom:8px; border-radius:0 4px 4px 0; }
+</style>
+</head>
+<body>
+<h1>Documentacion — MatrixCarlo</h1>
+<p>Generado desde <code>carlo_matrix.h</code> y <code>carlo.cpp</code> &mdash; Castro Galindo Carlo André</p>
+<h2>carlo_matrix.h</h2>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">Matriz dinamica 2D generica con gestion manual de memoria.  *  * Implementa el Rule of Five: constructor default, copy constructor,  * move constructor, copy assignment y move assignment.  * Internamente usa un doble puntero T** con new/delete manual.  *  *</p><table><tr><th>Template</th><th>Descripcion</th></tr><tr><td><code>T</code></td><td>Tipo de los elementos de la matriz (ej: TI, T5, T3F de types.h).  *  *</td></tr></table></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo(const MatrixCarlo &other) {</code><p class="brief">Copy constructor. Copia profunda elemento a elemento.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz fuente a copiar.</td></tr></table></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo(MatrixCarlo &&other) {</code><p class="brief">Move constructor. Transfiere la memoria sin copiar usando std::exchange.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz fuente que queda vacia tras el movimiento.</td></tr></table></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo &operator=(const MatrixCarlo &other) {</code><p class="brief">Copy assignment. Libera memoria propia y copia desde other.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz fuente.          *</td></tr></table><p><b>Retorna:</b> Referencia a this.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo &operator=(MatrixCarlo &&other) {</code><p class="brief">Move assignment. Libera memoria propia y transfiere desde other.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz fuente que queda vacia.          *</td></tr></table><p><b>Retorna:</b> Referencia a this.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">istream &Read(istream &is) {</code><p class="brief">Lee filas, columnas y elementos desde un istream.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>is</code></td><td>Stream de entrada (cin o ifstream).          *</td></tr></table><p><b>Retorna:</b> Referencia al stream para encadenamiento.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename Func, typename... Args></code><p class="brief">Aplica una funcion a cada elemento de la matriz.          *          * Usa templates variadicos para pasar argumentos extra a func,          * igual que std::forward en la implementacion del profesor.          *          *</p><table><tr><th>Template</th><th>Descripcion</th></tr><tr><td><code>Func</code></td><td>Tipo del callable (funcion, lambda, functor).          *</td></tr><tr><td><code>Args</code></td><td>Tipos de los argumentos extra opcionales.          *</td></tr></table><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>func</code></td><td>Funcion que recibe el elemento por referencia y lo modifica.          *</td></tr><tr><td><code>args</code></td><td>Argumentos extra que se reenvian a func.</td></tr></table></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">ostream &Print(ostream &os) {</code><p class="brief">Imprime la matriz en un ostream.          *          * Formato: primera linea "rows cols", luego una fila por linea.          *          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>os</code></td><td>Stream de salida (cout o ofstream).          *</td></tr></table><p><b>Retorna:</b> Referencia al stream para encadenamiento.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo operator+(const MatrixCarlo &other) const {</code><p class="brief">Suma elemento a elemento. Requiere mismas dimensiones.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz operando derecho.          *</td></tr></table><p><b>Retorna:</b> Nueva matriz resultado.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo operator-(const MatrixCarlo &other) const {</code><p class="brief">Resta elemento a elemento. Requiere mismas dimensiones.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz operando derecho.          *</td></tr></table><p><b>Retorna:</b> Nueva matriz resultado.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo operator*(const MatrixCarlo &other) const {</code><p class="brief">Multiplicacion matricial clasica con tres loops.          *          * Requiere que this->cols() == other.rows().          *          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>other</code></td><td>Matriz operando derecho.          *</td></tr></table><p><b>Retorna:</b> Nueva matriz de dimensiones this->rows() x other.cols().</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo operator*(T value) const {</code><p class="brief">Multiplicacion por escalar: mat * valor.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>value</code></td><td>Escalar multiplicador.          *</td></tr></table><p><b>Retorna:</b> Nueva matriz con cada elemento multiplicado por value.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">void Init(size_t rows, size_t cols) {</code><p class="brief">Inicializa la matriz con dimensiones dadas y memoria en ceros.          *          * Libera memoria previa si existe. Util para construir la matriz          * resultado antes de llenarla en paralelo con threads.          *          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>rows</code></td><td>Numero de filas.          *</td></tr><tr><td><code>cols</code></td><td>Numero de columnas.</td></tr></table></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">T       *operator[](size_t i)       { return m_pMat[i]; }</code><p class="brief">Acceso por fila. Permite mat[i][j] y mat[i][j] = valor.          *</p><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>i</code></td><td>Indice de fila.          *</td></tr></table><p><b>Retorna:</b> Puntero a la fila i (acceso directo a memoria).</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">Multiplicacion escalar a la izquierda: valor * mat.  *</p><table><tr><th>Template</th><th>Descripcion</th></tr><tr><td><code>T</code></td><td>Tipo de los elementos.  *</td></tr></table><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>value</code></td><td>Escalar multiplicador.  *</td></tr><tr><td><code>mat</code></td><td>Matriz operando.  *</td></tr></table><p><b>Retorna:</b> Nueva matriz resultado.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">@param os Stream de salida destino.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">size_t   m_rows = 0;       ///< Numero de filas.</code><p class="brief">< Doble puntero: arreglo de punteros a filas.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">size_t   m_cols = 0;       ///< Numero de columnas.</code><p class="brief">< Numero de filas.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">void Create() {</code><p class="brief">@brief Reserva memoria para la matriz. Requiere m_rows y m_cols > 0.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">MatrixCarlo() { }</code><p class="brief">@brief Constructor default. Crea una matriz vacia sin memoria reservada.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">~MatrixCarlo() { Destroy(); }</code><p class="brief">@brief Destructor. Llama a Destroy() para liberar memoria.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">const T *operator[](size_t i) const { return m_pMat[i]; }</code><p class="brief">@copydoc operator[](size_t)</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">size_t rows() const { return m_rows; }</code><p class="brief">@brief Retorna el numero de filas.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">size_t cols() const { return m_cols; }</code><p class="brief">@brief Retorna el numero de columnas.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">void Destroy() {</code><p class="brief">@brief Libera toda la memoria reservada y resetea el estado.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">@brief Lee una matriz desde un istream usando operator>>.</p></div>
+<div class="filename">carlo_matrix.h</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">@brief Imprime una matriz en un ostream usando operator<<.</p></div>
+<h2>carlo.cpp</h2>
+<div class="filename">carlo.cpp</div>
+<div class="entry"><code class="decl">template <typename T></code><p class="brief">Parsea un string con formato "NxM: n1 n2 ... / fila2 ..." y retorna una MatrixCarlo<T>.  *  * Usa std::regex para extraer dimensiones y elementos sin depender del  * formato exacto de separadores. Equivalente en C++ del from_string() de Python.  *  *</p><table><tr><th>Template</th><th>Descripcion</th></tr><tr><td><code>T</code></td><td>Tipo de los elementos de la matriz.  *</td></tr></table><table><tr><th>Parametro</th><th>Descripcion</th></tr><tr><td><code>text</code></td><td>String de entrada. Ej: "2x3: 1 2 3 / 4 5 6".  *</td></tr></table><p><b>Retorna:</b> MatrixCarlo<T> con los datos parseados.</p></div>
+<div class="filename">carlo.cpp</div>
+<div class="entry"><code class="decl">void DemoMatrixCarloRegex() {</code><p class="brief">Demo: lee una matriz desde teclado con formato NxM, la parsea con  *        std::regex usando MatrixFromString y aplica Square a todos los elementos.</p></div>
+<div class="filename">carlo.cpp</div>
+<div class="entry"><code class="decl">void DemoMatrixCarloThreads() {</code><p class="brief">Demo: aplica Square a cada elemento en paralelo, un std::thread por fila.  *  * No hay race conditions porque cada hilo trabaja exclusivamente en su propia fila.  * join() garantiza que todos los hilos terminen antes de imprimir el resultado.</p></div>
+<div class="filename">carlo.cpp</div>
+<div class="entry"><code class="decl">void DemoMatrixCarloThreadsMul() {</code><p class="brief">Demo: calcula C = A * B en paralelo, un std::thread por fila de C.  *  * Cada hilo computa el producto punto de su fila de A contra todas las columnas  * de B. Usa std::mutex con lock_guard para proteger cout durante el log de  * progreso. Al finalizar verifica el resultado contra operator* secuencial.</p></div>
+</body></html>

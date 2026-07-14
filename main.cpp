@@ -27,8 +27,8 @@ int main() {
     // DemoMatrixCarlo1();
     // DemoMatrixCarlo2();
     // DemoMatrixCarlo3();
-    // DemoMatrixCarloRegex();
+    DemoMatrixCarloRegex();
     // DemoMatrixCarloThreads();
-    DemoMatrixCarloThreadsMul();
+    // DemoMatrixCarloThreadsMul();
     return 0;
 }

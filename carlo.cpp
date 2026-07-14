@@ -96,8 +96,16 @@ void DemoMatrixCarlo3() {
     cout << m1;
 }
 
-// ── MatrixFromString: parsea "NxM: n1 n2 ... / n3 n4 ..." con std::regex ──
-// Recibe un string con la matriz en formato texto y retorna un MatrixCarlo<T>.
+/**
+ * @brief Parsea un string con formato "NxM: n1 n2 ... / fila2 ..." y retorna una MatrixCarlo<T>.
+ *
+ * Usa std::regex para extraer dimensiones y elementos sin depender del
+ * formato exacto de separadores. Equivalente en C++ del from_string() de Python.
+ *
+ * @tparam T Tipo de los elementos de la matriz.
+ * @param text String de entrada. Ej: "2x3: 1 2 3 / 4 5 6".
+ * @return MatrixCarlo<T> con los datos parseados.
+ */
 template <typename T>
 MatrixCarlo<T> MatrixFromString(const string &text) {
     // Define el patron para capturar NxM: dos numeros separados por 'x'/'X'
@@ -137,7 +145,10 @@ MatrixCarlo<T> MatrixFromString(const string &text) {
     return mat;
 }
 
-// ── DemoMatrixCarloRegex: lee input del usuario y parsea con regex ─────────
+/**
+ * @brief Demo: lee una matriz desde teclado con formato NxM, la parsea con
+ *        std::regex usando MatrixFromString y aplica Square a todos los elementos.
+ */
 void DemoMatrixCarloRegex() {
     cout << "=== DemoMatrixCarloRegex: parsear string con std::regex ===\n";
     cout << "Ingrese la matriz (formato: NxM: n1 n2 ... / fila2 ...):\n";
@@ -158,7 +169,12 @@ void DemoMatrixCarloRegex() {
     cout << mat;
 }
 
-// ── DemoMatrixCarloThreads: un std::thread por fila en paralelo ────────────
+/**
+ * @brief Demo: aplica Square a cada elemento en paralelo, un std::thread por fila.
+ *
+ * No hay race conditions porque cada hilo trabaja exclusivamente en su propia fila.
+ * join() garantiza que todos los hilos terminen antes de imprimir el resultado.
+ */
 void DemoMatrixCarloThreads() {
     cout << "=== DemoMatrixCarloThreads: un std::thread por fila ===\n";
     cout << "Ingrese la matriz (formato: NxM: n1 n2 ... / fila2 ...):\n";
@@ -192,10 +208,13 @@ void DemoMatrixCarloThreads() {
     cout << mat;
 }
 
-// ── DemoMatrixCarloThreadsMul: multiplicacion matricial en paralelo ─────────
-// Calcula C = A * B donde cada hilo computa una fila completa de C.
-// Usa std::mutex para proteger el log de progreso — demuestra sincronizacion
-// entre hilos ademas del paralelismo.
+/**
+ * @brief Demo: calcula C = A * B en paralelo, un std::thread por fila de C.
+ *
+ * Cada hilo computa el producto punto de su fila de A contra todas las columnas
+ * de B. Usa std::mutex con lock_guard para proteger cout durante el log de
+ * progreso. Al finalizar verifica el resultado contra operator* secuencial.
+ */
 void DemoMatrixCarloThreadsMul() {
     cout << "=== DemoMatrixCarloThreadsMul: C = A*B con un hilo por fila ===\n";
 
